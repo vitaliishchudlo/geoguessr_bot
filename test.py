@@ -1,86 +1,39 @@
-# import telebot
-# from time import sleep
-# bot = telebot.TeleBot('1718029958:AAFyyDpFHcSO-5JGiA_Oeibeck5Kt7t_UiE')
+# @dp.message_handler(commands=['dice'])
+# async def dice(message: types.Message):
+#     await bot.send_message(message.from_user.id, 'Кидаю кубика....')
+#
+#     result = await bot.send_dice(message.from_user.id)
+#     number = result['dice']['value']
+#     await sleep(3.3)
+#     if number == 1 or number == 3 or number == 5:
+#         await bot.send_message(message.from_user.id, f'Number is ODD - {number}.')
+#         print(f'{message.from_user.username} викинув {number}')
+#     else:
+#         await bot.send_message(message.from_user.id, f'Number is EVEN - {number}.')
+#         print(f'{message.from_user.username} викинув {number}')
 #
 #
-# @bot.message_handler(commands=['start'])
-# def welcome(message):
-#     bot.send_message(message.chat.id, f'<b>Привітулі, {message.from_user.first_name} {message.from_user.last_name}.</b>\n'
-#                                       f'Я - безкоштовний бот.\nМожеш використовувати мене нескінченно разів.', parse_mode='html')
-#     sleep(1.33)
-#     bot.send_message(message.chat.id, 'Вкажи, будь ласка, свою поштову скриньку:')
+# @dp.message_handler(commands=['start'])
+# async def start(message: types.Message):
+#     await bot.send_message(message.from_user.id, f'Hello.\nI am free bot GeoGuessr. Choose language....')
+#     await bot.send_message(message.from_user.id, f'You are not registered. Enter your email address: ')
 #
-#     @bot.message_handler(content_types=['text'])
-#     def take_mailbox(message):
-#         if message.text == '@':
-#             print('One more registered')
-#             bot.send_message(message.chat.id, 'Okay, i got it.')
-#
-# @bot.message_handler(commands=['exit'])
-# def goodbye(message):
-#     bot.send_message(message.chat.id, 'Bye')
-#     bot.send_message(message.chat.id, message.language_code)
+#     print(f'{message.from_user.username} registered in system.')
+#     f = open('text.txt', 'a')
+#     f.write(f'{message.from_user.username} registered in system in {datetime.today().now()}\n')
+#     f.close()
 #
 #
-# @bot.message_handler(content_types=['text'])
-# def lalala(message):
-#     bot.send_message(message.chat.id, message.text)
+# @dp.message_handler(commands=['help'])
+# async def helper(message: types.Message):
+#     await bot.send_message(message.from_user.id, 'Available command: \"/start\", \"/dice\",')
 #
 #
-# bot.polling(none_stop=True, interval=0)
+# @dp.message_handler(content_types=["text"])
+# async def repeat_all_messages(message):
+#     await bot.send_message(message.chat.id, message.text)
 #
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-# import telebot
-# from time import sleep
-# bot = telebot.TeleBot('1718029958:AAFyyDpFHcSO-5JGiA_Oeibeck5Kt7t_UiE')
-#
-#
-# @bot.message_handler(commands=['start'])
-# def welcome(message):
-#     bot.send_message(message.chat.id, 'privet')
-#     sleep(1.33)
-#     bot.send_message(message.chat.id, 'your email address? ')
-#
-#     @bot.message_handler(content_types=['text'])
-#     def take_mailbox(message):
-#         if message.text == '@':
-#             bot.send_message(message.chat.id, 'Okay, i got it.')
-#         else:
-#             bot.send_message(message.chat.id, 'email?')
-#
-# @bot.message_handler(commands=['exit'])
-# def goodbye(message):
-#     bot.send_message(message.chat.id, 'Bye')
-#     bot.send_message(message.chat.id, message.language_code)
-#
-#
-# @bot.message_handler(content_types=['text'])
-# def lalala(message):
-#     bot.send_message(message.chat.id, message.text)
-#
-#
-# bot.polling(none_stop=True, interval=0)
-
-
-
-
-
-# date v file & time
-#
-# f = open('text.txt', 'a')
-# f.write(f'{message.from_user.username} registered in system in {datetime.today().now()}\n')
-
-
-# print(f'{message.from_user.username} registered in system.')
-# f = open('text.txt', 'a')
-# f.write(f'{message.from_user.username} registered in system in {datetime.today().now()}\n')
-# f.close()
+# if __name__ == '__main__':
+#     # starting bot
+#     executor.start_polling(dp, skip_updates=True)
