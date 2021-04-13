@@ -19,46 +19,35 @@ class GetUserInfo(StatesGroup):
     lister = []
 
 
-# def register_handlers_food(dp: Dispatcher):
-#     dp.register_message_handler(get_user_mailbox, commands='start', state=GetUserInfo.waiting_for_user_mailbox)
-#     dp.register_message_handler(get_user_hash, state=GetUserInfo.waiting_for_user_hash)
-
-
 @dp.message_handler(commands=['start'])
 async def get_user_mailbox(message: types.Message):
     await message.answer('Enter your mailbox address: ')
-    await GetUserInfo.next()
+    await GetUserInfo.waiting_for_user_mailbox.set()
 
 
 @dp.message_handler(state=GetUserInfo.waiting_for_user_mailbox, content_types=types.ContentTypes.TEXT)
 async def mail_handler(message: types.Message, state: FSMContext):
     await message.answer(f'Ваша почта: {message.text}')
     GetUserInfo.lister.append(message.text)
-    await message.answer('Now enter your hash code')
-    await GetUserInfo.waiting_for_user_hash.set()
+    await message.answer('Now enter your hash code: ')
+    await GetUserInfo.next()
 
 
 @dp.message_handler(state=GetUserInfo.waiting_for_user_hash, content_types=types.ContentTypes.TEXT)
 async def get_user_hash(message: types.Message, state: FSMContext):
-    await message.answer('checking hash')
-    GetUserInfo.lister.append(message.text)
-    print(message.text)
-    if message.text.lower() == 1:
-        print('lol')
-    else:
-        print('xd')
-    await state.finish()
-    await message.answer(f'Your info {GetUserInfo.lister[0]}, {GetUserInfo.lister[1]}')
-    GetUserInfo.lister.clear()
-    await get_user_mailbox(message)
+        await state.update_data(hash=message.text)
+        await message.answer('Checking hash...')
+        GetUserInfo.lister.append(message.text)
+        if message.text.lower() == '1':
+            print('lol')
+        else:
+            print('xd')
+        await state.finish()
 
-# async def confirmation_info(message: types.Message, state: FSMContext):
-#     if message.text.lower() == 2 or 3:
-#         await message.answer('Two or Three')
-#     else:
-#         print('lol')
-#         await message.answer('Something Else')
-#
+        await message.answer(f'Your {GetUserInfo.lister}')
+        await get_user_mailbox(message)
+
+
 #     user_data = await state.get_data()
 #     await message.answer(f'Your info: {user_data}')
 
