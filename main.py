@@ -1,12 +1,13 @@
+import asyncio
+
 from aiogram import Bot, Dispatcher, types, executor
-from aiogram import Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 import logging
 
 # bot object
-bot = Bot("1718029958:AAFyyDpFHcSO-5JGiA_Oeibeck5Kt7t_UiE", parse_mode=types.ParseMode.HTML)
+bot = Bot("1735611519:AAFB_J3K71N-h0L_1OjPmCpqsItIKa3sSVA", parse_mode=types.ParseMode.HTML)
 # dispatcher for bot
 dp = Dispatcher(bot, storage=MemoryStorage())
 # Включаємо логування, щоб не пропустити важливі повідомлнення
@@ -26,30 +27,22 @@ async def get_user_mailbox(message: types.Message):
 
 
 @dp.message_handler(state=GetUserInfo.waiting_for_user_mailbox, content_types=types.ContentTypes.TEXT)
-async def mail_handler(message: types.Message, state: FSMContext):
-    await message.answer(f'Ваша почта: {message.text}')
+async def mail_handler(message: types.Message):
+    await message.answer(f'Your mailbox: {message.text}')
     GetUserInfo.lister.append(message.text)
+    await GetUserInfo.waiting_for_user_hash.set()
     await message.answer('Now enter your hash code: ')
-    await GetUserInfo.next()
 
 
 @dp.message_handler(state=GetUserInfo.waiting_for_user_hash, content_types=types.ContentTypes.TEXT)
 async def get_user_hash(message: types.Message, state: FSMContext):
-        await state.update_data(hash=message.text)
-        await message.answer('Checking hash...')
-        GetUserInfo.lister.append(message.text)
-        if message.text.lower() == '1':
-            print('lol')
-        else:
-            print('xd')
-        await state.finish()
-
-        await message.answer(f'Your {GetUserInfo.lister}')
-        await get_user_mailbox(message)
-
-
-#     user_data = await state.get_data()
-#     await message.answer(f'Your info: {user_data}')
+    await message.answer('Checking hash...')
+    GetUserInfo.lister.append(message.text)
+    await state.finish()
+    await message.answer(f'Your data: {GetUserInfo.lister}')
+    print(f'New user have been registered! {message.from_user.first_name, message.from_user.last_name}')
+    await get_user_mailbox(message)
+    GetUserInfo.lister.clear()
 
 
 if __name__ == '__main__':
