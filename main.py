@@ -7,7 +7,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 import logging
 
 # bot object
-bot = Bot("1735611519:AAFB_J3K71N-h0L_1OjPmCpqsItIKa3sSVA", parse_mode=types.ParseMode.HTML)
+bot = Bot("TOKEN", parse_mode=types.ParseMode.HTML)
 # dispatcher for bot
 dp = Dispatcher(bot, storage=MemoryStorage())
 # Включаємо логування, щоб не пропустити важливі повідомлнення
