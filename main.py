@@ -5,9 +5,10 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 import logging
+from database import MySql
 
 # bot object
-bot = Bot("TOKEN", parse_mode=types.ParseMode.HTML)
+bot = Bot('SECRET', parse_mode=types.ParseMode.HTML)
 # dispatcher for bot
 dp = Dispatcher(bot, storage=MemoryStorage())
 # Включаємо логування, щоб не пропустити важливі повідомлнення
@@ -40,9 +41,15 @@ async def get_user_hash(message: types.Message, state: FSMContext):
     GetUserInfo.lister.append(message.text)
     await state.finish()
     await message.answer(f'Your data: {GetUserInfo.lister}')
-    print(f'New user have been registered! {message.from_user.first_name, message.from_user.last_name}')
-    await get_user_mailbox(message)
-    GetUserInfo.lister.clear()
+
+
+
+    if MySql().register_user(GetUserInfo.lister, message.from_user) == 10:
+        await message.answer('You are already registered!')
+    else:
+        print(f'New user have been registered! {message.from_user.first_name, message.from_user.last_name}')
+        await get_user_mailbox(message)
+        GetUserInfo.lister.clear()
 
 
 if __name__ == '__main__':
