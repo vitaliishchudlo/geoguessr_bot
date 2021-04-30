@@ -1,14 +1,14 @@
-# from .config_db import connection
+from .config_db import connection
 
-import pymysql
-
-
-connection = pymysql.connect(
-    host='remotemysql.com',
-    user='JrsFeohzhH',
-    database='JrsFeohzhH',
-    password='f9Sex6J7vk'
-)
+# import pymysql
+#
+# connection = pymysql.connect(
+#     host='remotemysql.com',
+#     user='JrsFeohzhH',
+#     database='JrsFeohzhH',
+#     password='f9Sex6J7vk'
+# )
+#
 
 
 class MySql:
@@ -16,12 +16,14 @@ class MySql:
     def __init__(self):
         self.cursor = connection.cursor()
         self.connection = connection
+        self.connection.connect_timeout = 9999
 
-    # Вже в процесі використання перевірити чи потрібно робити self.close чи ні.
+
+    # Вже в процесі використання перевірити чи потрібно робити self.cursor.close чи ні.
 
     def check_exist_user(self, id_telegram):
-        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram,)
-        self.close()
+        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram, )
+
         return request
 
     def register_user(self, info_user, email, user_hash):
@@ -29,9 +31,10 @@ class MySql:
               'id_telegram, email, user_hash, admin) ' \
               'VALUES (%s, %s, %s, %s)'
         val = (info_user['id'], email, user_hash, False)
+
         try:
             self.cursor.execute(sql, val)
-            self.connection.commit()
+            connection.commit()
             return True
         except Exception as error:
             return error
@@ -46,16 +49,9 @@ class MySql:
     #         self.cursor.execute(sql, val)
     #         self.connection.commit()
 
-
-
     def close(self):
         self.cursor.close()
-        self.connection.close()
+        connection.close()
 
-# def test():
-#     print(MySql().register_user({'id':'13311234'}, 'vaaeqia@ukr.net'))
-#
-#
-#
-# if __name__ == '__main__':
-#     test()
+
+

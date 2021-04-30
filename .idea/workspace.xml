@@ -36,6 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -56,7 +57,13 @@
       <workItem from="1619381664659" duration="951000" />
       <workItem from="1619443199544" duration="3483000" />
       <workItem from="1619458525351" duration="2253000" />
-      <workItem from="1619465329383" duration="628000" />
+      <workItem from="1619465329383" duration="5097000" />
+      <workItem from="1619508825516" duration="4001000" />
+      <workItem from="1619520803037" duration="10000" />
+      <workItem from="1619520831009" duration="6129000" />
+      <workItem from="1619691574298" duration="311000" />
+      <workItem from="1619692395001" duration="6995000" />
+      <workItem from="1619768593351" duration="1265000" />
     </task>
     <servers />
   </component>
@@ -64,9 +71,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619034471393">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619693311055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619693311055" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619034471393" />
   </component>
 </project>
