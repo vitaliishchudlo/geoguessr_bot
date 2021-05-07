@@ -26,11 +26,11 @@ class MySql:
 
         return request
 
-    def register_user(self, info_user, email, user_hash):
+    def register_user(self, info_user, email):
         sql = 'INSERT INTO users_data (' \
-              'id_telegram, email, user_hash, admin) ' \
-              'VALUES (%s, %s, %s, %s)'
-        val = (info_user['id'], email, user_hash, False)
+              'id_telegram, email, admin) ' \
+              'VALUES (%s, %s, %s)'
+        val = (info_user['id'], email, False)
 
         try:
             self.cursor.execute(sql, val)

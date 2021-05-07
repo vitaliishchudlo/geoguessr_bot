@@ -16,7 +16,9 @@ admins = [
     ]
 # 728123098 - kre4kivskii
 # 447755416 - ilonka
-# 575871953 - sasheek
+# 575871953 - sasheeek
+
+
 
 ip = os.getenv("ip")
 

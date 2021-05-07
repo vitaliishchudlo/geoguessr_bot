@@ -13,7 +13,7 @@ async def bot_start(message: Message):
     await message.answer(f'Hey, {message.from_user.full_name}.')
     if MySql().check_exist_user(message.from_user.id):
         await message.answer('You are already registered!', reply_markup=menu)
-        await Menu.GetMenu.set()
+        await Menu.ShowMenu.set()
     else:
         await message.answer(f'I am <b>GeoGuessr Bot.</b>\n\n'
                              f'You are not registered in system. Please, pass verification.', reply_markup=reg)
