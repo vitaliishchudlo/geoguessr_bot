@@ -25,7 +25,7 @@ async def result_choice(message: Message, state: FSMContext):
 
 @dp.message_handler(Text(equals=['Dice']), state=Menu.ShowMenu)
 async def result_choice(message: Message):
-    message = await
+    message = await message.answer_dice()
     print (message)
     value= message.dice.value
     await message.answer(f'{value}')
