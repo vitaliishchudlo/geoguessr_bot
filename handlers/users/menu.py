@@ -1,54 +1,47 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 from aiogram.types import Message
-from keyboards.default.menu import menu  # next
-from loader import dp
+from aiogram import types
+from keyboards.default.menu import menu
+from loader import dp, bot
 from states import Menu, Registration
 from utils.db_api.registration import MySql
 from aiogram.types import ReplyKeyboardRemove
 
 
+@dp.message_handler(Text(equals=['Get account', 'Donate', 'F.A.Q.']), state=Menu.ShowMenu)
+async def result_choice(message: Message, state: FSMContext):
+    if message.text == 'Get account':
+        print('go')
+    elif message.text == 'Dice':
+        print('dice cube')
+        result = bot.send_dice(chat_id=message.from_user.id)
+
+
+    elif message.text == 'Donate':
+        print('donate')
+    else:
+        print('FAQ')
+
+@dp.message_handler(Text(equals=['Dice']), state=Menu.ShowMenu)
+async def result_choice(message: Message):
+    message = await
+    print (message)
+    value= message.dice.value
+    await message.answer(f'{value}')
+    if value == 1:
+        await message.answer(f'Ты  выйграл!')
+    else:
+        await message.answer(f'Ты проиграл! Я загадал 1')
 
 
 
+@dp.message_handler(commands=['menu'])
+async def menu_command(message: Message, state: FSMContext):
+    await message.answer('You are in main menu', reply_markup=menu)
+    await Menu.ShowMenu.set()
 
-# @dp.message_handler(state=Registration.GetEmail)
-# async def get_email_address(message: Message, state: FSMContext):
-#     await state.update_data(email=message.text)
-#     await message.answer(f"Follow the link and get hash-code:\n"
-#                          f"https://post-shift.ru/api.php?action=reg&email={message.text}\n"
-#                          f"Give me that hash")
-#     await Registration.next()
-#
-#
-# @dp.message_handler(state=Registration.GetHash)
-# async def enter_message(message: Message, state: FSMContext):
-#     hash_user = message.text
-#     data = await state.get_data()
-#
-#     if MySql().register_user(
-#             message.from_user, data.get('email'), hash_user) is True:
-#         await message.answer('You have successfully registered!', reply_markup=menu)
-#         await Menu.ShowMenu.set()
-#     else:
-#         await message.answer('Something went wrong.\nPlease try again /start.')
-#         await state.finish()
-#
-#
-# @dp.message_handler(Text(equals=['Get account', 'Delete account', 'Donate']), state=Menu.ShowMenu)
-# async def get_food(message: Message, state: FSMContext):
-#     await message.answer(f"Вы выбрали {message.text}. Спасибо", reply_markup=ReplyKeyboardRemove())
-#     await state.finish()
-#
-#
-# @dp.message_handler(commands=['menu'])
-# async def menu_command(message: Message, state: FSMContext):
-#     await message.answer('You are in main menu', reply_markup=menu)
-#     await Menu.ShowMenu.set()
-#
-#
-# @dp.message_handler(state=Menu.ShowMenu)
-# async def bot_echo(message: Message):
-#     # await message.answer(message.as_json())
-#     await message.answer(f"Choose button.")
-#
+
+@dp.message_handler(state=Menu.ShowMenu)
+async def bot_echo(message: Message):
+    await message.answer(f"Choose button.")

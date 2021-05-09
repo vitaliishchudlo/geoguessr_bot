@@ -12,4 +12,4 @@ def check_hash(hash):
         else:
             return 6001
     else:
-        return 6002, request.get('error')
+        return (f'Error: 6002 | {request.get("error")}')
