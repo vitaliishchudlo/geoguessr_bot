@@ -4,44 +4,54 @@ from aiogram.types import Message
 from aiogram import types
 from keyboards.default.menu import menu
 from loader import dp, bot
-from states import Menu, Registration
+from states import Menu
 from utils.db_api.registration import MySql
 from aiogram.types import ReplyKeyboardRemove
+from asyncio import sleep
+
+@dp.message_handler(text='Get account', state=Menu.ChoiceMenu)
+async def menu_choice_get_account(message: Message, state: FSMContext):
+    pass
 
 
-@dp.message_handler(Text(equals=['Get account', 'Donate', 'F.A.Q.']), state=Menu.ShowMenu)
-async def result_choice(message: Message, state: FSMContext):
-    if message.text == 'Get account':
-        print('go')
-    elif message.text == 'Dice':
-        print('dice cube')
-        result = bot.send_dice(chat_id=message.from_user.id)
+@dp.message_handler(text='Dice', state=Menu.ChoiceMenu)
+async def menu_choice_dice(message: Message, state: FSMContext):
+    bot_dice = await message.answer_dice(reply_markup=ReplyKeyboardRemove())
+    await message.answer('Rolling the dice...')
+    await sleep(3.2)
+    await message.answer(f'The result is {bot_dice.dice.value} :).', reply_markup=menu)
+
+@dp.message_handler(text='Donate', state=Menu.ChoiceMenu)
+async def menu_choice_donate(message: Message, state: FSMContext):
+    donate = await message.answer(
+        '●▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬●\n'
+        '‎‎‎‎‎‎‎‎ ░░░░░░░░░░  WELCOME  ░░░░░░░░░░ \n'
+        '●▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬●\n\n'
+        '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n'
+        '░╔═══╦═══╦═╗░╔╦═══╦════╦═══╗░\n'
+        '░╚╗╔╗║╔═╗║║╚╗║║╔═╗║╔╗╔╗║╔══╝░\n'
+        '░░║║║║║░║║╔╗╚╝║║░║╠╝║║╚╣╚══╗░\n'
+        '░░║║║║║░║║║╚╗║║╚═╝║░║║░║╔══╝░\n'
+        '░╔╝╚╝║╚═╝║║░║║║╔═╗║░║║░║╚══╗░\n'
+        '░╚═══╩═══╩╝░╚═╩╝░╚╝░╚╝░╚═══╝░\n'
+        '░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n'
+    )
 
 
-    elif message.text == 'Donate':
-        print('donate')
-    else:
-        print('FAQ')
+@dp.message_handler(text='F.A.Q.', state=Menu.ChoiceMenu)
+async def menu_choice_faq(message: Message, state: FSMContext):
+    await message.answer('We don`t know how to use this bot...\n'
+                         'P.S. Developers of bot')
 
-@dp.message_handler(Text(equals=['Dice']), state=Menu.ShowMenu)
-async def result_choice(message: Message):
-    message = await message.answer_dice()
-    print (message)
-    value= message.dice.value
-    await message.answer(f'{value}')
-    if value == 1:
-        await message.answer(f'Ты  выйграл!')
-    else:
-        await message.answer(f'Ты проиграл! Я загадал 1')
 
 
 
 @dp.message_handler(commands=['menu'])
 async def menu_command(message: Message, state: FSMContext):
-    await message.answer('You are in main menu', reply_markup=menu)
-    await Menu.ShowMenu.set()
+    await message.answer('You are in main menu: ', reply_markup=menu)
+    await Menu.ChoiceMenu.set()
 
 
-@dp.message_handler(state=Menu.ShowMenu)
-async def bot_echo(message: Message):
+@dp.message_handler(state=Menu.ChoiceMenu)
+async def menu_echo(message: Message):
     await message.answer(f"Choose button.")

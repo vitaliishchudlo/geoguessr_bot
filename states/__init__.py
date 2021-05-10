@@ -1,3 +1,3 @@
-from .menu import Menu, ResultChoice
+from .menu import Menu
 from .registration import Registration
 from .start import Start
