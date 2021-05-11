@@ -7,7 +7,6 @@ from loader import dp
 from states import Menu, Start, Registration
 from utils.db_api import MySql
 
-
 @dp.message_handler(CommandStart())
 async def bot_start(message: Message):
     await message.answer(f'Hey, {message.from_user.full_name}.')
