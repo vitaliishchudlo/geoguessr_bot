@@ -38,8 +38,10 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/old" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
@@ -73,7 +75,20 @@
       <workItem from="1620651421812" duration="1826000" />
       <workItem from="1620670171900" duration="593000" />
       <workItem from="1620727212146" duration="1920000" />
-      <workItem from="1620761135949" duration="294000" />
+      <workItem from="1620761135949" duration="1191000" />
+      <workItem from="1620844929912" duration="649000" />
+      <workItem from="1620854701616" duration="1281000" />
+      <workItem from="1620920051671" duration="391000" />
+      <workItem from="1620927244745" duration="809000" />
+      <workItem from="1620931242561" duration="1806000" />
+      <workItem from="1620942131216" duration="6000" />
+      <workItem from="1621026975689" duration="597000" />
+      <workItem from="1621275258697" duration="3209000" />
+      <workItem from="1621369465149" duration="3896000" />
+      <workItem from="1621522328608" duration="3798000" />
+      <workItem from="1621530645020" duration="3684000" />
+      <workItem from="1621594242620" duration="10949000" />
+      <workItem from="1621622438750" duration="3742000" />
     </task>
     <servers />
   </component>
@@ -90,17 +105,18 @@
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619693311055" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619034471393" />
-    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1619804819921">
+    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1620942136011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619804819921" />
+    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620942136011" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1620670031440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1620670031440" />
-    <state x="431" y="145" width="670" height="158" key="search.everywhere.popup" timestamp="1620481321513">
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1621603255678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="670" height="158" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1620481321513" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1621603255678" />
   </component>
 </project>

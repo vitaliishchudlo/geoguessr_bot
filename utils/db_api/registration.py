@@ -22,8 +22,7 @@ class MySql:
     # Вже в процесі використання перевірити чи потрібно робити self.cursor.close чи ні.
 
     def check_exist_user(self, id_telegram):
-        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram, )
-
+        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram,)
         return request
 
     def register_user(self, info_user, email):

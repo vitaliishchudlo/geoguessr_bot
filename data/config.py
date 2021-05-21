@@ -19,7 +19,12 @@ admins = [
 # 575871953 - sasheeek
 
 
+photo_base = {
+    '10.png':'AgACAgIAAxkBAAIPh2CmfQnXz0KT2SHqac1_VbMON_kyAALfszEbW8o5Scp3kWqKiRqm0XaAoy4AAwEAAwIAA3kAA6IEAQABHwQ'
+}
 
+
+# can comment downer
 ip = os.getenv("ip")
 
 aiogram_redis = {

@@ -7,7 +7,7 @@ from post_shift_api import check_hash
 from states.menu import Menu
 from states.registration import Registration
 from utils.db_api import MySql
-
+import json
 
 @dp.message_handler(state=Registration.GetEmail)
 async def get_email_address(message: Message, state: FSMContext):
@@ -20,35 +20,76 @@ async def get_email_address(message: Message, state: FSMContext):
 
 @dp.message_handler(state=Registration.GetHash)
 async def get_user_hash(message: Message, state: FSMContext):
-    result_hash = check_hash(message.text)
-    if message.text == '{error	"this_email_is_already_in_use"}' or \
-        message.text == '{"error":"a_person_with_this_ip_is_already_registered"}':
-        await message.answer('You found mistery pasxalka.', reply_markup=menu)
-        MySql().register_hash(message.text, message.from_user.id)
-        data = await state.get_data()
-        req = MySql().register_user(message.from_user, data.get('email'))
-        if req is True:
-            await message.answer('You have successfully registered!', reply_markup=menu)
-            await Menu.ChoiceMenu.set()
-        else:
-            await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
-            await state.finish()
-        await Menu.ChoiceMenu.set()
+
+    result = get_hash(message.text)
+    if result == False:
+
+        await message.answer('Is it okay hash?\n<u>Try one more time</u>')
     else:
-        if result_hash == 6000:
-            MySql().register_hash(message.text, message.from_user.id)
-            data = await state.get_data()
-            req = MySql().register_user(message.from_user, data.get('email'))
-            if req is True:
-                await message.answer('You have successfully registered!', reply_markup=menu)
-                await Menu.ChoiceMenu.set()
-            else:
-                await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
-                await state.finish()
-        elif result_hash == 6001:
-            await message.answer('This hash already used. Try write correctly hash')
-        else:
-            await message.answer(f'This is not hash, try again.\nReason:\n{result_hash}')
+        print(result)
+
+
+
+
+
+def get_hash(message):
+    try:
+        json_l = json.loads(message)
+        result_hash = json_l.get('hash')
+        return result_hash
+    except Exception as err:
+        return False
+
+        # if message.text == '{"error":"this_email_is_already_in_use"}' or \
+        #         message.text == '{"error":"a_person_with_this_ip_is_already_registered"}':
+        #     await message.answer('You found mistery pasxalka.', reply_markup=menu)
+        #     MySql().register_hash(message.text, message.from_user.id)
+        #     data = await state.get_data()
+        #     req = MySql().register_user(message.from_user, data.get('email'))
+        #     if req is True:
+        #         await message.answer('You have successfully registered!', reply_markup=menu)
+        #         await Menu.ChoiceMenu.set()
+        #     else:
+        #         await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
+        #         await state.finish()
+        #     await Menu.ChoiceMenu.set()
+        # else:
+        #     if result_hash == 6000:
+        #         MySql().register_hash(message.text, message.from_user.id)
+        #         data = await state.get_data()
+        #         req = MySql().register_user(message.from_user, data.get('email'))
+        #         if req is True:
+        #             await message.answer('You have successfully registered!', reply_markup=menu)
+        #             await Menu.ChoiceMenu.set()
+        #         else:
+        #             await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
+        #             await state.finish()
+        #     elif result_hash == 6001:
+        #         await message.answer('This hash already used. Try write correctly hash')
+        #     else:
+        #         await message.answer(f'This is not hash, try again.\nReason:\n{result_hash}')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
