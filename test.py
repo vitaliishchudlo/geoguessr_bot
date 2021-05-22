@@ -1,3 +1,22 @@
+import requests
+
+hash = '2868985227b081ea418f29533e3eaafa'
+
+url = f'https://post-shift.ru/api.php?action=balance&hash={hash}'
+
+request = requests.get(url=url)
+
+print(request.status_code)
+print(request.reason)
+print(request.text)
+print(request.json())
+
+
+
+
+
+
+
 # import pymysql
 # import random
 # connection = pymysql.connect(

@@ -14,15 +14,35 @@ class GetAccountMySql():
     def __init__(self):
         self.cursor = connection.cursor()
         self.connection = connection
-
+    # 14fddffb5fe4df95c09a599c7f029de8
 
     def get_hash(self, status = 1):
         self.cursor.execute("SELECT hash FROM hashs_data WHERE status = %s", status)
         return self.cursor.fetchone()
 
-    def create_account(self):
-        get_hash = self.get_hash()
+    #POST SHIFT API
+    def register_mail(self, hash):
+        import requests
+        url = f'https://post-shift.ru/api.php?action=new&hash={hash}'
+        request = requests.get(url=url)
+        print(request.json())
+        self.check_remain_calls(hash)
+        
+    def check_remain_calls(self, hash):
+        import requests
+        url = f'https://post-shift.ru/api.php?action=balance&hash={hash}'
+        request = requests.get(url=url)
+        if int(request.json()['limit']) >= 2:
+            self.register_mail(hash)
+        else:
+            print('error')
 
+
+
+
+    def create_account(self):
+        get_hash = self.get_hash()[0]
+        number_of_calls = self.check_remain_calls(get_hash)
 
 
     def check_available_accounts(self, status=0):
@@ -45,7 +65,7 @@ if __name__ == '__main__':
     print(GetAccountMySql().get_hash())
 
     request = GetAccountMySql().check_available_accounts()
-    print(f'print(request) # {request}')
+    # print(f'print(request) # {request}')
     if request == 8000:
         GetAccountMySql().create_account()
     else:
