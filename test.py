@@ -1,51 +1,25 @@
 import requests
+from bs4 import BeautifulSoup
 
-hash = '2868985227b081ea418f29533e3eaafa'
 
-url = f'https://post-shift.ru/api.php?action=balance&hash={hash}'
+url = 'https://www.geoguessr.com/api/v3/accounts/signup'
 
-request = requests.get(url=url)
+headers = {
+    'Host': 'www.geoguessr.com',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0',
+    'Accept': '*/*',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Referer': 'https://www.geoguessr.com/signup',
+    'Content-Type': 'application/json',
+    'Origin': 'https://www.geoguessr.com',
+    'Content-Length': '32',
+    'Connection': 'keep-alive',
+}
+
+
+request = requests.post(url, headers=headers, json={'email':'prxocvqz40@post-shift.ru'})
+
 
 print(request.status_code)
 print(request.reason)
 print(request.text)
-print(request.json())
-
-
-
-
-
-
-
-# import pymysql
-# import random
-# connection = pymysql.connect(
-#     host='localhost',
-#     user='root',
-#     database='geoguessrfree',
-#     password=''
-# )
-# cursor = connection.cursor()
-#
-#
-# def register_hash(hash_user, creator_id):
-#     sql = 'INSERT INTO hashs_data (hash, creator_id) VALUES (%s, %s)'
-#     val = (hash_user, creator_id)
-#     try:
-#         cursor.execute(sql, val)
-#         connection.commit()
-#         return True
-#     except Exception as err:
-#         return err
-#
-#
-# if __name__ == '__main__':
-#     print(register_hash('412151g315t1ge7895338e9e54d5', 514242))
-
-import time
-
-# sec = (int(time.time()))
-# min = sec / 60
-# hours = min / 60
-# days = hours / 24
-# print(days)
