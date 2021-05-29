@@ -1,15 +1,5 @@
 from .config_db import connection
 
-# import pymysql
-#
-# connection = pymysql.connect(
-#     host='remotemysql.com',
-#     user='JrsFeohzhH',
-#     database='JrsFeohzhH',
-#     password='f9Sex6J7vk'
-# )
-#
-
 
 class MySql:
 
@@ -18,11 +8,10 @@ class MySql:
         self.connection = connection
         # self.connection.connect_timeout = 9999
 
-
     # Вже в процесі використання перевірити чи потрібно робити self.cursor.close чи ні.
 
     def check_exist_user(self, id_telegram):
-        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram,)
+        request = self.cursor.execute("SELECT * FROM users_data WHERE id_telegram = %s", id_telegram, )
         return request
 
     def register_user(self, info_user, email):
@@ -48,10 +37,6 @@ class MySql:
         except Exception as err:
             return err
 
-
     def close(self):
         self.cursor.close()
         connection.close()
-
-
-

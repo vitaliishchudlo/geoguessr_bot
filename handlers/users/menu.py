@@ -9,11 +9,20 @@ from utils.db_api.registration import MySql
 from aiogram.types import ReplyKeyboardRemove
 from asyncio import sleep
 from data.config import photo_base
+from utils.db_api.menu_get_account import GetAccountMySql
+from .register_account import create_account
 
 @dp.message_handler(text='Get account', state=Menu.ChoiceMenu)
 async def menu_choice_get_account(message: Message, state: FSMContext):
-    
+    account = GetAccountMySql().check_available_account()
 
+    if account == 8000:  # if account NOT exists
+        account = create_account()
+        print(account)
+    else:
+        email, password = account
+        set_account_status = GetAccountMySql().set_account_busy(email, password)
+        await message.answer(f'Login: {email}\nPassword: {password}')
 
 
 

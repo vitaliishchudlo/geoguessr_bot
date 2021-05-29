@@ -41,7 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
@@ -90,7 +90,9 @@
       <workItem from="1621594242620" duration="10949000" />
       <workItem from="1621622438750" duration="8211000" />
       <workItem from="1621769485245" duration="852000" />
-      <workItem from="1621809849812" duration="9155000" />
+      <workItem from="1621809849812" duration="10772000" />
+      <workItem from="1621933065166" duration="12000" />
+      <workItem from="1621965553809" duration="12741000" />
     </task>
     <servers />
   </component>
@@ -107,18 +109,18 @@
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619693311055" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619034471393" />
-    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1620942136011">
+    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1621965560583">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619804819921" />
+    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1621965560583" />
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620942136011" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1620670031440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1620670031440" />
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1621603255678">
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1622021550018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1621603255678" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1622021550018" />
   </component>
 </project>
