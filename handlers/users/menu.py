@@ -13,39 +13,27 @@ from utils.db_api.menu_get_account import GetAccountMySql
 from .register_account import create_account
 
 @dp.message_handler(text='Get account', state=Menu.ChoiceMenu)
-async def menu_choice_get_account(message: Message, state: FSMContext):
+async def menu_choice_get_account(message: Message):
     account = GetAccountMySql().check_available_account()
 
     if account == 8000:  # if account NOT exists
         account = create_account()
-        print(account)
+        print(f'Account - {account}')
     else:
         email, password = account
-        set_account_status = GetAccountMySql().set_account_busy(email, password)
+        set_account_status = GetAccountMySql().set_account_busy(email)
         await message.answer(f'Login: {email}\nPassword: {password}')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @dp.message_handler(text='Dice', state=Menu.ChoiceMenu)
-async def menu_choice_dice(message: Message, state: FSMContext):
+async def menu_choice_dice(message: Message):
     bot_dice = await message.answer_dice(reply_markup=ReplyKeyboardRemove())
     await message.answer('Rolling the dice...')
     await sleep(3.2)
     await message.answer(f'The result is {bot_dice.dice.value} :).', reply_markup=menu)
 
 @dp.message_handler(text='Donate', state=Menu.ChoiceMenu)
-async def menu_choice_donate(message: Message, state: FSMContext):
+async def menu_choice_donate(message: Message):
     donate = await message.answer(
         '●▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬●\n'
         '‎‎‎‎‎‎‎‎ ░░░░░░░░░░  WELCOME  ░░░░░░░░░░ \n'
@@ -62,7 +50,7 @@ async def menu_choice_donate(message: Message, state: FSMContext):
 
 
 @dp.message_handler(text='F.A.Q.', state=Menu.ChoiceMenu)
-async def menu_choice_faq(message: Message, state: FSMContext):
+async def menu_choice_faq(message: Message):
 
     await message.answer_photo(photo=photo_base['10.png'], caption='Requires front\\back licence plates.')
     await message.answer('We don`t know how to use this bot...\n'
@@ -72,7 +60,7 @@ async def menu_choice_faq(message: Message, state: FSMContext):
 
 
 @dp.message_handler(commands=['menu'])
-async def menu_command(message: Message, state: FSMContext):
+async def menu_command(message: Message):
     await message.answer('You are in main menu: ', reply_markup=menu)
     await Menu.ChoiceMenu.set()
 

@@ -7,10 +7,10 @@ class GetAccountMySql:
         self.connection = connection
 
 
-    def get_hash(self, status=1):
+    def get_hash(self, status=0):
         request = self.cursor.execute("SELECT hash FROM hashs_data WHERE status = %s", status)
 
-        if request ==0:
+        if request == 0:
             return 0
         else:
             return self.cursor.fetchone()
@@ -18,7 +18,7 @@ class GetAccountMySql:
 
 
 
-    def set_account_busy(self, email, password, status=1):
+    def set_account_busy(self, email):
         request = self.cursor.execute("UPDATE accounts_data SET status=1 WHERE email =%s", email)
         connection.commit()
         print(f'Account {email} setted status "1" - unactive.')

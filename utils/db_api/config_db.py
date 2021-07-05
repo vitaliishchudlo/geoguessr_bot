@@ -5,5 +5,6 @@ connection = pymysql.connect(
     host=DATABASE_HOST,
     user=DATABASE_USER,
     database=DATABASE_NAME,
-    password=DATABASE_PASSWORD
+    password=DATABASE_PASSWORD,
+    connect_timeout=50000
 )
