@@ -42,12 +42,12 @@ def get_hash(message):
 
         # if message.text == '{"error":"this_email_is_already_in_use"}' or \
         #         message.text == '{"error":"a_person_with_this_ip_is_already_registered"}':
-        #     await message.answer('You found mistery pasxalka.', reply_markup=menu)
+        #     await message.answer('You found mistery pasxalka.', reply_markup=menu_choice)
         #     MySql().register_hash(message.text, message.from_user.id)
         #     data = await state.get_data()
         #     req = MySql().register_user(message.from_user, data.get('email'))
         #     if req is True:
-        #         await message.answer('You have successfully registered!', reply_markup=menu)
+        #         await message.answer('You have successfully registered!', reply_markup=menu_choice)
         #         await Menu.ChoiceMenu.set()
         #     else:
         #         await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
@@ -59,7 +59,7 @@ def get_hash(message):
         #         data = await state.get_data()
         #         req = MySql().register_user(message.from_user, data.get('email'))
         #         if req is True:
-        #             await message.answer('You have successfully registered!', reply_markup=menu)
+        #             await message.answer('You have successfully registered!', reply_markup=menu_choice)
         #             await Menu.ChoiceMenu.set()
         #         else:
         #             await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')

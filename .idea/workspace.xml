@@ -96,7 +96,8 @@
       <workItem from="1624376920609" duration="485000" />
       <workItem from="1624641740788" duration="1239000" />
       <workItem from="1624695048722" duration="607000" />
-      <workItem from="1625394471181" duration="6284000" />
+      <workItem from="1625394471181" duration="6879000" />
+      <workItem from="1625572696588" duration="6455000" />
     </task>
     <servers />
   </component>
@@ -104,6 +105,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1625578681941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1625578681941" />
     <state x="654" y="275" key="#Notifications" timestamp="1620474284092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

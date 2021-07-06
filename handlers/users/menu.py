@@ -9,20 +9,23 @@ from utils.db_api.registration import MySql
 from aiogram.types import ReplyKeyboardRemove
 from asyncio import sleep
 from data.config import photo_base
-from utils.db_api.menu_get_account import GetAccountMySql
-from .register_account import create_account
+from utils.db_api.menu_get_account import check_available_account
+# from .register_account import create_account
+from .menu_choice import get_account
 
 @dp.message_handler(text='Get account', state=Menu.ChoiceMenu)
 async def menu_choice_get_account(message: Message):
-    account = GetAccountMySql().check_available_account()
+    account = get_account()
 
-    if account == 8000:  # if account NOT exists
-        account = create_account()
+    if not account:  # if account NOT exists
+        # account = create_account()
         print(f'Account - {account}')
     else:
-        email, password = account
-        set_account_status = GetAccountMySql().set_account_busy(email)
-        await message.answer(f'Login: {email}\nPassword: {password}')
+        print(f'Akk: {account}')
+        print(account)
+        #set_account_status = GetAccountMySql().set_account_busy(account[0])  # Встановити ще статус зайнятого аккаунту
+        await message.answer(f'Login: {account[0]}\nPassword: {account[1]}')
+
 
 
 @dp.message_handler(text='Dice', state=Menu.ChoiceMenu)
@@ -59,9 +62,9 @@ async def menu_choice_faq(message: Message):
 
 
 
-@dp.message_handler(commands=['menu'])
+@dp.message_handler(commands=['menu_choice'])
 async def menu_command(message: Message):
-    await message.answer('You are in main menu: ', reply_markup=menu)
+    await message.answer('You are in main menu_choice: ', reply_markup=menu)
     await Menu.ChoiceMenu.set()
 
 
