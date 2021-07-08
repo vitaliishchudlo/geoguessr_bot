@@ -36,7 +36,7 @@
 #             return False
 #
 
-from data.config import DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_USER
+from config.config import DATABASE_HOST, DATABASE_NAME, DATABASE_PASSWORD, DATABASE_USER
 import pymysql
 
 

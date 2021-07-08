@@ -8,7 +8,7 @@ from states import Menu
 from utils.db_api.registration import MySql
 from aiogram.types import ReplyKeyboardRemove
 from asyncio import sleep
-from data.config import photo_base
+from config.config import photo_base
 from utils.db_api.menu_get_account import check_available_account
 # from .register_account import create_account
 from .menu_choice import get_account

@@ -18,6 +18,17 @@ admins = [
 # 447755416 - ilonka
 # 575871953 - sasheeek
 
+def create_connection():
+    connection = pymysql.connect(
+        host=DATABASE_HOST,
+        user=DATABASE_USER,
+        database=DATABASE_NAME,
+        password=DATABASE_PASSWORD,
+    )
+    return connection
+
+
+a = create_connection()
 
 photo_base = {
     '10.png':'AgACAgIAAxkBAAIPh2CmfQnXz0KT2SHqac1_VbMON_kyAALfszEbW8o5Scp3kWqKiRqm0XaAoy4AAwEAAwIAA3kAA6IEAQABHwQ'

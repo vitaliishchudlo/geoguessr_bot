@@ -3,7 +3,7 @@ from typing import Optional
 
 import aioredis
 
-from data import config
+from config import config
 
 data_pool: Optional[aioredis.Redis] = None
 

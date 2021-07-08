@@ -29,10 +29,7 @@ async def get_user_hash(message: Message, state: FSMContext):
         print(result)
 
 
-
-
-
-def get_hash(message):
+def get_hash(message):  # Is it hash right ?
     try:
         json_l = json.loads(message)
         result_hash = json_l.get('hash')
@@ -44,8 +41,8 @@ def get_hash(message):
         #         message.text == '{"error":"a_person_with_this_ip_is_already_registered"}':
         #     await message.answer('You found mistery pasxalka.', reply_markup=menu_choice)
         #     MySql().register_hash(message.text, message.from_user.id)
-        #     data = await state.get_data()
-        #     req = MySql().register_user(message.from_user, data.get('email'))
+        #     config = await state.get_data()
+        #     req = MySql().register_user(message.from_user, config.get('email'))
         #     if req is True:
         #         await message.answer('You have successfully registered!', reply_markup=menu_choice)
         #         await Menu.ChoiceMenu.set()
@@ -56,8 +53,8 @@ def get_hash(message):
         # else:
         #     if result_hash == 6000:
         #         MySql().register_hash(message.text, message.from_user.id)
-        #         data = await state.get_data()
-        #         req = MySql().register_user(message.from_user, data.get('email'))
+        #         config = await state.get_data()
+        #         req = MySql().register_user(message.from_user, config.get('email'))
         #         if req is True:
         #             await message.answer('You have successfully registered!', reply_markup=menu_choice)
         #             await Menu.ChoiceMenu.set()
