@@ -1,9 +1,0 @@
-CODES OF ERRORS WITCH YOU ACCEPT:
-
-
-
-
-6xxx - everything related with hash
-6000 - хеш існує, 100 запитів можливо
-6001 - хеш існує, менше 100 запитів можливо
-6002 - хеш не існує чи неправильно введений

@@ -1,91 +1,53 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
-
+from aiogram.types import ReplyKeyboardRemove
 from keyboards.default import menu
 from loader import dp
-from post_shift_api import check_hash
-from states.menu import Menu
+
+from post_shift_api import check_hash_availability, check_hash_usage
 from states.registration import Registration
-from utils.db_api import MySql
+
 import json
+from states import Start
+
+
+
+@dp.message_handler(text='🧭 Register 🚩', state=Start.PressButtonRegister)
+async def start_registration_user(message: Message):
+    await message.answer('Send me your <u>valid email address</u>.')
+    await Registration.GetEmail.set()
+
+
 
 @dp.message_handler(state=Registration.GetEmail)
 async def get_email_address(message: Message, state: FSMContext):
     await state.update_data(email=message.text)
-    await message.answer(f"Follow the link and get hash-code:\n"
-                         f"https://post-shift.ru/api.php?action=reg&email={message.text}\n"
-                         "GIVE ME ONLY '..XXX..'. EXAMPLE: {'hash':'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}  ")
+    await message.answer(f'1. Follow the link below\n   >>> https://post-shift.ru/api.php?action=reg&email={message.text}\n\n'
+                         f'2. You will receive a hash in the form: {{"hash":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}}.\n\n'
+                         f'3. I only need you to send "XXX...."')
+    # ADD MORE EMAIL CHECKS FOR TRUTH
     await Registration.next()
 
 
+
 @dp.message_handler(state=Registration.GetHash)
-async def get_user_hash(message: Message, state: FSMContext):
+async def get_hash(message: Message, state: FSMContext):
+    # 1. Перевірка правильності хешу - 32 символи.
+    # 2. Перевірити запитом на post-shift чи це адекватний хеш.
+    # 3. Перевірити запитом на post-shift скільки залишилося запитів.
+    # 4. Перевірити чи вже такий хеш є в БД.
 
-    result = get_hash(message.text)
-    if result == False:
-
-        await message.answer('Is it okay hash?\n<u>Try one more time</u>')
+    if not len(message.text) == 32:  # 1
+        await message.answer('Check that the hash entered is <u>correct</u>.')
     else:
-        print(result)
-
-
-def get_hash(message):  # Is it hash right ?
-    try:
-        json_l = json.loads(message)
-        result_hash = json_l.get('hash')
-        return result_hash
-    except Exception as err:
-        return False
-
-        # if message.text == '{"error":"this_email_is_already_in_use"}' or \
-        #         message.text == '{"error":"a_person_with_this_ip_is_already_registered"}':
-        #     await message.answer('You found mistery pasxalka.', reply_markup=menu_choice)
-        #     MySql().register_hash(message.text, message.from_user.id)
-        #     config = await state.get_data()
-        #     req = MySql().register_user(message.from_user, config.get('email'))
-        #     if req is True:
-        #         await message.answer('You have successfully registered!', reply_markup=menu_choice)
-        #         await Menu.ChoiceMenu.set()
-        #     else:
-        #         await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
-        #         await state.finish()
-        #     await Menu.ChoiceMenu.set()
-        # else:
-        #     if result_hash == 6000:
-        #         MySql().register_hash(message.text, message.from_user.id)
-        #         config = await state.get_data()
-        #         req = MySql().register_user(message.from_user, config.get('email'))
-        #         if req is True:
-        #             await message.answer('You have successfully registered!', reply_markup=menu_choice)
-        #             await Menu.ChoiceMenu.set()
-        #         else:
-        #             await message.answer(f'Something went wrong.\n{req}\nPlease try again /start.')
-        #             await state.finish()
-        #     elif result_hash == 6001:
-        #         await message.answer('This hash already used. Try write correctly hash')
-        #     else:
-        #         await message.answer(f'This is not hash, try again.\nReason:\n{result_hash}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        get_result = check_hash_availability(message.text) # 2
+        if get_result:
+            if int(get_result) == 100:
+                await message.answer('It`s okay hash. Registering')
+            else:
+                await message.answer(f'It`s hash, but it`s already used. {get_result}')
+        else:
+            await message.answer('Sorry, but it`s not true hash.')
 
 
 

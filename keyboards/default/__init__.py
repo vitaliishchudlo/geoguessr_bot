@@ -1,1 +1,2 @@
-from .menu import reg, menu
+from .start import reg
+from .menu import menu

@@ -30,19 +30,74 @@
       </map>
     </option>
   </component>
-  <component name="ProjectId" id="1rUcnybPvfPeA4dyglaAup43scd" />
+  <component name="ProjectId" id="1v4X3hI76u2y0oubwSUMGJFOEqf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../geo_guessr copy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Coding\Projects\Python\geoguessr_bot\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="geoguessr_bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="geoguessr_bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/states" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\alex\PycharmProjects\example\states\new.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -54,51 +109,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618757590304</updated>
-      <workItem from="1619034287126" duration="4074000" />
-      <workItem from="1619078224211" duration="2454000" />
-      <workItem from="1619353813721" duration="8484000" />
-      <workItem from="1619381664659" duration="951000" />
-      <workItem from="1619443199544" duration="3483000" />
-      <workItem from="1619458525351" duration="2253000" />
-      <workItem from="1619465329383" duration="5097000" />
-      <workItem from="1619508825516" duration="4001000" />
-      <workItem from="1619520803037" duration="10000" />
-      <workItem from="1619520831009" duration="6129000" />
-      <workItem from="1619691574298" duration="311000" />
-      <workItem from="1619692395001" duration="6995000" />
-      <workItem from="1619768593351" duration="1265000" />
-      <workItem from="1619794362026" duration="10074000" />
-      <workItem from="1620387182931" duration="25572000" />
-      <workItem from="1620489949959" duration="701000" />
-      <workItem from="1620563743983" duration="2417000" />
-      <workItem from="1620634020565" duration="7821000" />
-      <workItem from="1620651421812" duration="1826000" />
-      <workItem from="1620670171900" duration="593000" />
-      <workItem from="1620727212146" duration="1920000" />
-      <workItem from="1620761135949" duration="1191000" />
-      <workItem from="1620844929912" duration="649000" />
-      <workItem from="1620854701616" duration="1281000" />
-      <workItem from="1620920051671" duration="391000" />
-      <workItem from="1620927244745" duration="809000" />
-      <workItem from="1620931242561" duration="1806000" />
-      <workItem from="1620942131216" duration="6000" />
-      <workItem from="1621026975689" duration="597000" />
-      <workItem from="1621275258697" duration="3209000" />
-      <workItem from="1621369465149" duration="3896000" />
-      <workItem from="1621522328608" duration="3798000" />
-      <workItem from="1621530645020" duration="3684000" />
-      <workItem from="1621594242620" duration="10949000" />
-      <workItem from="1621622438750" duration="8211000" />
-      <workItem from="1621769485245" duration="852000" />
-      <workItem from="1621809849812" duration="10772000" />
-      <workItem from="1621933065166" duration="12000" />
-      <workItem from="1621965553809" duration="12741000" />
-      <workItem from="1624376920609" duration="485000" />
-      <workItem from="1624641740788" duration="1239000" />
-      <workItem from="1624695048722" duration="607000" />
-      <workItem from="1625394471181" duration="6879000" />
-      <workItem from="1625572696588" duration="8297000" />
-      <workItem from="1625753177379" duration="3754000" />
+      <workItem from="1625822140607" duration="4894000" />
+      <workItem from="1625828202330" duration="6894000" />
+      <workItem from="1625933968382" duration="12556000" />
+      <workItem from="1626018380513" duration="5180000" />
     </task>
     <servers />
   </component>
@@ -106,31 +120,13 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="395" y="91" key="#Inspections" timestamp="1625578681941">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1626018394989">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="395" y="91" key="#Inspections/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1625578681941" />
-    <state x="654" y="275" key="#Notifications" timestamp="1620474284092">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1626018394989" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1625953079481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="654" y="275" key="#Notifications/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1620474284092" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619693311055">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1619693311055" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1619034471393" />
-    <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1624695058603">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1621965560583" />
-    <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1624695058603" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1620670031440">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1620670031440" />
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1622021550018">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1622021550018" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1280.-413.1280.984@0.0.1536.824" timestamp="1625953079481" />
   </component>
 </project>
