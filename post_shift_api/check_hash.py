@@ -6,8 +6,3 @@ def check_hash_availability(hash):
     result = request.get('limit')
     return result
 
-
-
-def check_hash_usage(hash):
-    pass
-

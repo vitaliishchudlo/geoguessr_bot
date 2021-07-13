@@ -4,8 +4,7 @@ from aiogram.types import Message
 from keyboards.default import reg, menu
 from loader import dp
 from states import Start
-from utils.db_api.check_user_registration import user_registration_status
-
+from utils.db_api import user_registration_status
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: Message):
