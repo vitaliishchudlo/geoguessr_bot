@@ -4,7 +4,7 @@ from aiogram.types import Message
 from keyboards.default import menu
 from loader import dp
 from post_shift_api import check_hash_availability
-from states import Start
+from states import Start, MainMenu
 from states.registration import Registration
 from utils.db_api import user_hash_status, register_hash, register_user
 
@@ -39,14 +39,12 @@ async def get_hash(message: Message, state: FSMContext):
     if not len(message.text) == 32:  # 1. Hash validation - 32 characters.
         await message.answer('Check that the hash entered is <u>correct</u>.')
     else:
-        get_result = check_hash_availability(message.text)
-
-        if not get_result:
+        true_hash = check_hash_availability(message.text)  # 2. Checking hash with request API to server.
+        if not true_hash:
             await message.answer('Sorry, but it`s not true hash.')
         else:
-
-            if not int(get_result) == 100:  # 3. Check the number of available requests by post-shift request.
-                await message.answer(f'It`s hash, but it`s already used. {get_result}')
+            if not int(true_hash) == 100:  # 3. Check the number of available requests by post-shift request.
+                await message.answer(f'It`s hash, but it`s already used. {true_hash}')
             else:
                 if not user_hash_status(message.text):
                     register_hash(message.text, message.from_user.id)  # registering HASH in database
@@ -55,6 +53,6 @@ async def get_hash(message: Message, state: FSMContext):
                     register_user(message.from_user, info.get('email'))  # registering USER in database
                     await message.answer('Registering 2\\2 - done.\n\nYou have successfully register in system.',
                                          reply_markup=menu)
-                    await state.finish()
+                    await MainMenu.GetChoiceMenu.set()
                 else:
                     await message.answer('This hash is already registered in system.')
