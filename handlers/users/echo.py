@@ -15,4 +15,4 @@ async def bot_echo(message: Message):
 
 @dp.message_handler(content_types=ContentType.PHOTO)
 async def get_file_id_p(message: Message):
-    await message.reply(message.photo[-1].file_id)
+    await message.reply(message.photo[3].file_id)

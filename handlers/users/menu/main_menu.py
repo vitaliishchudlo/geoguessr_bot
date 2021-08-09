@@ -16,28 +16,16 @@ from asyncio import sleep
 @dp.message_handler(text='Get account', state=MainMenu.GetChoiceMenu)
 async def menu_choice_get_account(message: Message):
     account_data = get_account()
-    if not account_data:  # register new account
+    # ALWAYS RETURN (TRUE/FALSE , RESULT)
+    if not account_data:  # IF NO ACCOUNT IN DATABASE ---> register new account
         account_data = register_new_account()
-
         if not account_data[0]:
             await message.answer(f'[Error]: {account_data[1]}')
-
         else:
-            await message.answer(f'Account data: {account_data}')
-
-        # if not account_data[0]:
-        #     await message.answer(f'Account data: {account_data[1]}')
-        #     # if false, cant register. Will be returned (False, '[Reason]')
-        #     pass
-        # else:
-        #     # if true will be returned True
-        #     pass
-        #     await message.answer(f'Account data: {account_data}')
-        #
-    else:
+            await message.answer(f'Account data: {account_data[0],account_data[1]}')
+    else:  # IF ACCOUNT EXISTS IN DATABASE ---> GIVE IT FOR USER
         # 1. Set account busy in DB.
         account_status = set_account_status_busy(account_data[0])
-
         # 2. Message about data of account.
         await message.answer(f'Here is your <u>free account</u>:\n\n'
                              f'Email: {account_data[0]}\nPassword: {account_data[1]}')
