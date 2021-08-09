@@ -40,16 +40,28 @@ def set_account_status_busy(email):
 
     request = cursor.execute('UPDATE accounts_data SET status=1 WHERE email=%s', email)
     conn.commit()
-    close_connection(cursor,conn)
+    close_connection(cursor, conn)
     return request
 
 
-def get_hash(status=1):
+def get_hash(status=0):
     conn = connection()
     cursor = conn.cursor()
 
     request = cursor.execute(f" SELECT hash FROM hashs_data WHERE status = %s", status)
     if request != 0:
-        return cursor.fetchone()
+        result = cursor.fetchone()[0]
+        close_connection(cursor, conn)
+        return result
     else:
+        close_connection(cursor, conn)
         return False
+
+
+def set_hash_status_deactive(hash, status=1):
+    conn = connection()
+    cursor = conn.cursor()
+
+    request = cursor.execute(f"UPDATE hashs_data SET status=%s WHERE hash=%s", (status, hash))
+    conn.commit()
+    close_connection(cursor, conn)
