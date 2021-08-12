@@ -41,5 +41,3 @@ def register_hash(hash_user, creator_id):
     conn.commit()
 
     close_connection(cursor, conn)
-
-
