@@ -7,5 +7,5 @@ def register_email(hash):
 
 
 def get_confirmation_email(hash, key, letter_id=1):
-    response = requests.get(f'https://post-shift.ru/api.php?action=getmail&hash={hash}&key={key}&id={letter_id}').json()
-    return response
+    response = requests.get(f'https://post-shift.ru/api.php?action=getmail&hash={hash}&key={key}&id={letter_id}')
+    return response.text

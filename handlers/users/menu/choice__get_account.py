@@ -24,9 +24,6 @@ def register_new_account():
     email_data = register_email(hash_from_database)
     email_address = email_data.get('email')
     email_key = email_data.get('key')
-    print('\n\n')
-    print(email_data)
-    print('\n\n')
 
     # 4. 1\2 First step of registration geoguessr account. Send post.
     send_confirmation_email(email_address)
@@ -35,9 +32,7 @@ def register_new_account():
 
     email_text = get_confirmation_email(hash_from_database, email_key)
     print(email_text)
-    time.sleep(5)
-    email_text = get_confirmation_email(hash_from_database, email_key)
-    print(email_text)
+
 
     # 6.  2\2 First step of registration geoguessr account. Confirmation. Setting password
 
@@ -45,9 +40,3 @@ def register_new_account():
 
     delete_all_active_emails_by_ip()
     return 'login', 'password'
-
-    # account_data = register_new_account()
-    # if not account_data[0]:
-    #     await message.answer(f'[Error]: {account_data[1]}')
-    # else:
-    #     await message.answer(f'Account data: {account_data[0], account_data[1]}')

@@ -5,14 +5,18 @@ def set_password(end_link):
     url = f'https://www.geoguessr.com/profile/set-password/{end_link}'
 
 
-def send_confirmation_email(email_address):
+def send_confirmation_letter(email_address):
     url = 'https://www.geoguessr.com/api/v3/accounts/signup'
     data = {'email': email_address}
     request = requests.post(url=url, json=data)
-    print(request.status_code, request.reason)
-    print(request.text)
+    print('Confirmation email was sent', request.status_code)
 
 
-def clear_slphesh():
-    bad_link = 'https:\/\/www.geoguessr.com\/profile\/set-password\/FFR3k6M0Tsmnb9Js5sjJ9FgC8Ir1S0k5\\'
-    new_link = bad_link.replace('\\', '')
+def confirm_password(token, password):
+    url = 'https://www.geoguessr.com/api/v3/profiles/setpassword'
+    data = {
+        'token': token,
+        'password': password
+    }
+    response = requests.post(url=url, json=data)
+    return response.text
