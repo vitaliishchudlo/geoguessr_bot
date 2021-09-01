@@ -9,8 +9,6 @@ from utils.db_api import user_registration_status
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: Message):
-    # await message.answer(f'Hey, {message.from_user.full_name} 👋🏼.')  # Congratulations to the user
-
     if user_registration_status(message.from_user.id):  # if user is already registered in bot
         await message.answer(f'Welcome back, {message.from_user.first_name} 👋🏼.\nYou are already registered!',
                              reply_markup=menu)

@@ -5,11 +5,11 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import Message
 
 from geoguessr_api import send_confirmation_letter, confirm_password
-from keyboards.default import confirmation_to_create, admin_menu, count_of_account_to_create
+from keyboards.default import confirmation_to_create, admin_menu, count_of_account_to_create, menu
 from loader import dp
 from post_shift_api import check_hash_availability, delete_all_active_emails_by_ip, register_email, \
     get_confirmation_email
-from states import AdminMenu
+from states import AdminMenu, MainMenu
 from utils.db_api import get_hash
 from utils.db_api import set_hash_status_deactive, input_account
 from utils.processing_functions import generate_password, get_link_token
@@ -70,9 +70,10 @@ async def accept_create_accounts(message: Message, state: FSMContext):
     await AdminMenu.GetChoiceMenu.set()
 
 
-@dp.message_handler(text='<- Back', state=AdminMenu.GetChoiceMenu)
-async def go_back(state: FSMContext):
-    await state.finish()
+@dp.message_handler(text='Main menu', state=AdminMenu.GetChoiceMenu)
+async def go_back(message: Message, state: FSMContext):
+    await message.reply('Exiting from admin menu', reply_markup=menu)
+    await MainMenu.GetChoiceMenu.set()
 
 
 @dp.message_handler(text='Cancel', state=AdminMenu.CreateAccounts)

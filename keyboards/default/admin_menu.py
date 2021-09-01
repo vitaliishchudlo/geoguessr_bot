@@ -6,7 +6,7 @@ admin_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Create accounts'),
         ],
         [
-            KeyboardButton(text='<- Back'),
+            KeyboardButton(text='Main menu'),
             KeyboardButton(text='Others... (unwork)'),
         ]
     ],
@@ -22,7 +22,6 @@ confirmation_to_create = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True, one_time_keyboard=True
 )
-
 
 count_of_account_to_create = ReplyKeyboardMarkup(
     keyboard=[
