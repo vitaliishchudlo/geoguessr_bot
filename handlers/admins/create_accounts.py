@@ -70,7 +70,7 @@ async def accept_create_accounts(message: Message, state: FSMContext):
     await AdminMenu.GetChoiceMenu.set()
 
 
-@dp.message_handler(text='Main menu', state=AdminMenu.GetChoiceMenu)
+@dp.message_handler(text='< Menu', state=AdminMenu.GetChoiceMenu)
 async def go_back(message: Message, state: FSMContext):
     await message.reply('Exiting from admin menu', reply_markup=menu)
     await MainMenu.GetChoiceMenu.set()

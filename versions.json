@@ -1,6 +1,15 @@
 {
-    "current_version": "1.0",
+    "current_version": "1.1",
     "versions": {
+        "1.1": {
+            "updated": {
+                "1": "Updated users&admin menus"
+            },
+            "fixed": {
+                "1": "Transitions between users&admin menus",
+                "2": "Fixed internal bugs and optimization"
+            }
+        },
         "1.0": {
             "updated": {
                 "1": "We uploaded into a remote server and started working around the clock"

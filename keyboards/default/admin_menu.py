@@ -6,9 +6,12 @@ admin_menu = ReplyKeyboardMarkup(
             KeyboardButton(text='Create accounts'),
         ],
         [
-            KeyboardButton(text='Main menu'),
-            KeyboardButton(text='Others... (unwork)'),
+            KeyboardButton(text='Statistics')
+        ],
+        [
+            KeyboardButton(text='< Menu'),
         ]
+
     ],
     resize_keyboard=True, one_time_keyboard=True
 )
@@ -38,6 +41,16 @@ count_of_account_to_create = ReplyKeyboardMarkup(
             KeyboardButton(text='20'),
             KeyboardButton(text='25'),
             KeyboardButton(text='50'),
+        ]
+    ],
+    resize_keyboard=True, one_time_keyboard=True
+)
+
+
+statistics_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='Available accounts')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True

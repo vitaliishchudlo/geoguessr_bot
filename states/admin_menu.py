@@ -5,3 +5,4 @@ class AdminMenu(StatesGroup):
     GetChoiceMenu = State()
     CreateAccounts = State()
     CreateAccountsCount = State()
+    WhatStatistics = State()
