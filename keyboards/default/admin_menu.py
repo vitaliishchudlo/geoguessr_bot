@@ -3,13 +3,13 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 admin_menu = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Create accounts'),
+            KeyboardButton(text='💿 Create accounts 📂'),
         ],
         [
-            KeyboardButton(text='Statistics')
+            KeyboardButton(text='🌐 Statistics 📶')
         ],
         [
-            KeyboardButton(text='< Menu'),
+            KeyboardButton(text='🔙 Menu 🔙')
         ]
 
     ],
@@ -19,8 +19,8 @@ admin_menu = ReplyKeyboardMarkup(
 confirmation_to_create = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Accept'),
-            KeyboardButton(text='Cancel')
+            KeyboardButton(text='✅ Accept ✅'),
+            KeyboardButton(text='🚫 Cancel 🚫')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True
@@ -46,11 +46,13 @@ count_of_account_to_create = ReplyKeyboardMarkup(
     resize_keyboard=True, one_time_keyboard=True
 )
 
-
 statistics_menu = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Available accounts')
+            KeyboardButton(text='All account statistics')
+        ],
+        [
+            KeyboardButton(text='🔙 Go back')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True

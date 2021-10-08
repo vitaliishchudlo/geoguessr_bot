@@ -15,7 +15,7 @@ from utils.db_api import set_hash_status_deactive, input_account
 from utils.processing_functions import generate_password, get_link_token
 
 
-@dp.message_handler(text='Create accounts', state=AdminMenu.GetChoiceMenu)
+@dp.message_handler(text='💿 Create accounts 📂', state=AdminMenu.GetChoiceMenu)
 async def menu_choice_create_account(message: Message, state: FSMContext):
     # 1. Get hash from DB, if false > say user
     hash_from_database = get_hash()  # hash from db --> 2868985227b081ea418f29533e3eaafa
@@ -37,7 +37,7 @@ async def menu_choice_create_account(message: Message, state: FSMContext):
     await AdminMenu.next()
 
 
-@dp.message_handler(text='Accept', state=AdminMenu.CreateAccounts)
+@dp.message_handler(text='✅ Accept ✅', state=AdminMenu.CreateAccounts)
 async def accept_create_accounts(message: Message, state: FSMContext):
     await message.answer('How many accounts create?', reply_markup=count_of_account_to_create)
     await AdminMenu.next()
@@ -70,13 +70,13 @@ async def accept_create_accounts(message: Message, state: FSMContext):
     await AdminMenu.GetChoiceMenu.set()
 
 
-@dp.message_handler(text='< Menu', state=AdminMenu.GetChoiceMenu)
+@dp.message_handler(text='🔙 Menu 🔙', state=AdminMenu.GetChoiceMenu)
 async def go_back(message: Message, state: FSMContext):
     await message.reply('Exiting from admin menu', reply_markup=menu)
     await MainMenu.GetChoiceMenu.set()
 
 
-@dp.message_handler(text='Cancel', state=AdminMenu.CreateAccounts)
+@dp.message_handler(text='🚫 Cancel 🚫', state=AdminMenu.CreateAccounts)
 async def go_cancel(message: Message):
     await message.answer('Cancelling...', reply_markup=admin_menu)
     await AdminMenu.GetChoiceMenu.set()

@@ -9,3 +9,9 @@
 
 # from utils.db_api import  delete_user_limit
 # delete_user_limit(498570021)
+
+
+
+a = ['a', 'b', 'c']
+for i in a:
+    print(i,end = ' ')

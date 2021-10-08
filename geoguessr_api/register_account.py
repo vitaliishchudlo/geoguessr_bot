@@ -7,7 +7,9 @@ def set_password(end_link):
 
 def send_confirmation_letter(email_address):
     url = 'https://www.geoguessr.com/api/v3/accounts/signup'
-    data = {'email': email_address}
+    data = {
+        'email': email_address
+    }
     request = requests.post(url=url, json=data)
     print('Confirmation email was sent', request.status_code)
 

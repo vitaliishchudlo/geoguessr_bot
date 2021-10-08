@@ -5,8 +5,8 @@ from loader import dp
 
 @dp.message_handler()
 async def bot_echo(message: Message):
-    await message.answer(f"You entered bad command.\n"
-                         f"You can type <b>'/'</b> and select the correct command.", reply_markup=ReplyKeyboardRemove())
+    await message.answer(f"You have been unactive for a long time.\n"
+                         f"To return to the menu, enter the command - <b>/menu</b>", reply_markup=ReplyKeyboardRemove())
 
 
 @dp.message_handler(commands=['json'])

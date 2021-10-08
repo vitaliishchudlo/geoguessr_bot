@@ -20,24 +20,16 @@ def close_connection(cursor, conn):
     conn.close()
 
 
-def user_hash_status(hash):
+def get_account_statistic():
     conn = connection()
     cursor = conn.cursor()
-
-    request = cursor.execute('SELECT * FROM hashs_data WHERE hash = %s', hash)
-
+    request = cursor.execute('SELECT COUNT(*) FROM accounts_data UNION ALL '
+                             'SELECT COUNT(*) FROM accounts_data WHERE status=0 UNION ALL '
+                             'SELECT COUNT(*) FROM accounts_data WHERE status=1;')
+    response = cursor.fetchall()
     close_connection(cursor, conn)
-    return request
-
-
-def register_hash(hash_user, creator_id, status=0):
-    conn = connection()
-    cursor = conn.cursor()
-
-    sql = 'INSERT INTO hashs_data (hash, status, creator_id) VALUES (%s, %s. %s)'
-    val = (hash_user, status, creator_id)
-
-    cursor.execute(sql, val)
-    conn.commit()
-
-    close_connection(cursor, conn)
+    result = []
+    for select in response:
+        for res in select:
+            result.append(res)
+    return result
