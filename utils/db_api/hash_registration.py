@@ -34,7 +34,7 @@ def register_hash(hash_user, creator_id, status=0):
     conn = connection()
     cursor = conn.cursor()
 
-    sql = 'INSERT INTO hashs_data (hash, status, creator_id) VALUES (%s, %s. %s)'
+    sql = 'INSERT INTO hashs_data (hash, status, creator_id) VALUES (%s, %s, %s)'
     val = (hash_user, status, creator_id)
 
     cursor.execute(sql, val)

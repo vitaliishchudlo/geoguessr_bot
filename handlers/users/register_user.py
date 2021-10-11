@@ -1,8 +1,10 @@
+import asyncio
+
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
 from keyboards.default import menu
-from loader import dp
+from loader import dp, bot
 from post_shift_api import check_hash_availability
 from states import Start, MainMenu
 from states.registration import Registration
@@ -34,7 +36,7 @@ async def go_back(message: Message):
 
 @dp.message_handler(state=Registration.GetHash)
 async def get_hash(message: Message, state: FSMContext):
-    await message.answer('Starting hash validation...')
+    msg = await message.answer('Starting hash validation...')
 
     if not len(message.text) == 32:  # 1. Hash validation - 32 characters.
         await message.answer('Check that the hash entered is <u>correct</u>.')
@@ -44,15 +46,17 @@ async def get_hash(message: Message, state: FSMContext):
             await message.answer('Sorry, but it`s not true hash.')
         else:
             if not int(true_hash) == 100:  # 3. Check the number of available requests by post-shift request.
-                await message.answer(f'It`s hash, but it`s already used. {true_hash}')
+                await message.answer(f'It`s hash, but it`s already used.')
             else:
                 if not user_hash_status(message.text):
                     register_hash(message.text, message.from_user.id)  # registering HASH in database
-                    await message.answer('Registering 1\\2 - done.')
+                    await bot.edit_message_text('[LOADING] |||||..... 50%', message_id=msg.message_id,
+                                                chat_id=msg.chat.id)
                     info = await state.get_data()
                     register_user(message.from_user, info.get('email'))  # registering USER in database
-                    await message.answer('Registering 2\\2 - done.\n\nYou have successfully register in system.',
-                                         reply_markup=menu)
+                    await bot.edit_message_text('[LOADING] DONE 100%', message_id=msg.message_id,
+                                                chat_id=msg.chat.id)
+                    await message.answer('You have successfully register in system.', reply_markup=menu)
                     await MainMenu.GetChoiceMenu.set()
                 else:
                     await message.answer('This hash is already registered in system.')

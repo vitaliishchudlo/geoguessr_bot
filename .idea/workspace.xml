@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fce3f6c1-f846-47df-b907-f993df428792" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/tips.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/default/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/default/tips.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/tips.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/main.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/states/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/states/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/register_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/register_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db_api/hash_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/hash_registration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
