@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce3f6c1-f846-47df-b907-f993df428792" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geoguessr_api/register_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/geoguessr_api/register_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admins/create_accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admins/create_accounts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admins/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admins/statistics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/echo.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/echo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/users/menu/faq.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/faq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/menu/get_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/get_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/menu/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/default/admin_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/admin_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboards/default/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db_api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db_api/hash_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/hash_registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/default/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/states/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/states/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/states/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/states/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
