@@ -6,12 +6,12 @@ tips = ReplyKeyboardMarkup(
             KeyboardButton(text='🌎 WORLD 🌎'),
         ],
         [
-            KeyboardButton(text='🌞 Asia 🥢'),
-            KeyboardButton(text='🇪🇺 Europe 🇪🇺')
+            KeyboardButton(text='🌞 Asia 🥢(UNWORKED)'),
+            KeyboardButton(text='🇪🇺 Europe 🇪🇺(UNWORKED)')
         ],
         [
             KeyboardButton(text='🇺🇸 USA 🇺🇸'),
-            KeyboardButton(text='🇦🇺 Australia 🦘')
+            KeyboardButton(text='🇦🇺 Australia 🦘(UNWORKED)')
         ],
         [
             KeyboardButton(text='🔙 Back')
@@ -23,7 +23,26 @@ tips = ReplyKeyboardMarkup(
 world_tip = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='🚗 Left- & Right-hand traffic 🚦')
+            KeyboardButton(text='🚗 Left- & Right-hand traffics 🚦')
+        ],
+        [
+            KeyboardButton(text='🌎 Map of countries with Google Street View 👁')
+        ]
+    ],
+    resize_keyboard=True, one_time_keyboard=True
+)
+
+
+usa_tip = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='🚘 Blurred car plates in the states 🚍')
+        ],
+        [
+            KeyboardButton(text='🚙 Requirement for front & rear license plates 🚗')
+        ],
+        [
+            KeyboardButton(text='🪧 Speed highway signs in the states 🪧')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True

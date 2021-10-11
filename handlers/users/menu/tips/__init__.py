@@ -1,2 +1,3 @@
-from .main import dp
+from .tips import dp
 from .world import dp
+from .usa import dp

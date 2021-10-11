@@ -9,3 +9,4 @@ class Tips(StatesGroup):
     GetRegionTips = State()
 
     ChoiceWorldTips = State()
+    ChoiceUsaTips = State()

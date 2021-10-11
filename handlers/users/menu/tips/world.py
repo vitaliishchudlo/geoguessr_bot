@@ -11,7 +11,13 @@ async def tips_world(message: Message):
     await Tips.ChoiceWorldTips.set()
 
 
-@dp.message_handler(text='🚗 Left- & Right-hand traffic 🚦', state=Tips.ChoiceWorldTips)
+@dp.message_handler(text='🚗 Left- & Right-hand traffics 🚦', state=Tips.ChoiceWorldTips)
 async def left_right_hand_traffic(message: Message):
-    photo = InputFile('/home/vitalii/PycharmProjects/geoguessr_bot/media/main.png')
+    photo = InputFile('/home/vitalii/PycharmProjects/geoguessr_bot/media/world/main.png')
     await message.reply_photo(photo=photo, caption='🟦 ↑↓ Drives on the left\n🟥 ↓↑ Drives on the right')
+
+
+@dp.message_handler(text='🌎 Map of countries with Google Street View 👁', state=Tips.ChoiceWorldTips)
+async def google_street_view(message: Message):
+    photo = InputFile('/home/vitalii/PycharmProjects/geoguessr_bot/media/world/second.png')
+    await message.reply_photo(photo=photo, caption='🗺World map of all the countries that have Google Street View🌐')
