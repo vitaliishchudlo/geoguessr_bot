@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fce3f6c1-f846-47df-b907-f993df428792" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/users/register_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/register_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db_api/hash_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/hash_registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/tips.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/tips.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/usa.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/usa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/tips/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/tips/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/default/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/default/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/default/tips.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/tips.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/notify_admins.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/notify_admins.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DataBaseBackUp" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>

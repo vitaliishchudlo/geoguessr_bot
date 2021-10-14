@@ -15,8 +15,8 @@ async def menu_choice_get_account(message: Message):
         await MainMenu.GetChoiceMenu.set()
     else:  # if user is not registered in bot
         await message.reply(f'Hey, {message.from_user.full_name} 👋🏼.\n\n'
-                             'I am <b>GeoGuessr Bot.</b>\n'
-                             'You are not registered. Please, pass verification.', reply_markup=reg)
+                            'I am <b>GeoGuessr Bot.</b>\n'
+                            'You are not registered. Please, pass verification.', reply_markup=reg)
         await Start.PressButtonRegister.set()
 
 
@@ -27,8 +27,8 @@ async def menu_choice_get_account(message: Message):
         await MainMenu.GetChoiceMenu.set()
     else:  # if user is not registered in bot
         await message.reply(f'Hey, {message.from_user.full_name} 👋🏼.\n\n'
-                             'I am <b>GeoGuessr Bot.</b>\n'
-                             'You are not registered. Please, pass verification.', reply_markup=reg)
+                            'I am <b>GeoGuessr Bot.</b>\n'
+                            'You are not registered. Please, pass verification.', reply_markup=reg)
         await Start.PressButtonRegister.set()
 
 
@@ -41,8 +41,8 @@ async def menu_choice_get_account(message: Message):
         await MainMenu.GetChoiceMenu.set()
     else:  # if user is not registered in bot
         await message.reply(f'Hey, {message.from_user.full_name} 👋🏼.\n\n'
-                             'I am <b>GeoGuessr Bot.</b>\n'
-                             'You are not registered. Please, pass verification.', reply_markup=reg)
+                            'I am <b>GeoGuessr Bot.</b>\n'
+                            'You are not registered. Please, pass verification.', reply_markup=reg)
         await Start.PressButtonRegister.set()
 
 
@@ -53,6 +53,6 @@ async def menu_choice_get_account(message: Message):
         await MainMenu.GetChoiceMenu.set()
     else:  # if user is not registered in bot
         await message.reply(f'Hey, {message.from_user.full_name} 👋🏼.\n\n'
-                             'I am <b>GeoGuessr Bot.</b>\n'
-                             'You are not registered. Please, pass verification.', reply_markup=reg)
+                            'I am <b>GeoGuessr Bot.</b>\n'
+                            'You are not registered. Please, pass verification.', reply_markup=reg)
         await Start.PressButtonRegister.set()

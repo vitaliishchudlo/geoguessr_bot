@@ -27,6 +27,9 @@ world_tip = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text='🌎 Map of countries with Google Street View 👁')
+        ],
+        [
+            KeyboardButton(text='🔙 Back')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True
@@ -43,6 +46,9 @@ usa_tip = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text='🪧 Speed highway signs in the states 🪧')
+        ],
+        [
+            KeyboardButton(text='🔙 Back')
         ]
     ],
     resize_keyboard=True, one_time_keyboard=True

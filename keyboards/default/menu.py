@@ -15,3 +15,12 @@ menu = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True, one_time_keyboard=False
 )
+
+write_menu = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='/menu'),
+        ],
+    ],
+    resize_keyboard=True, one_time_keyboard=False
+)
