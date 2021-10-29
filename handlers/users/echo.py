@@ -2,11 +2,14 @@ from aiogram.types import Message, ContentType, ReplyKeyboardRemove
 
 from loader import dp
 
+from keyboards.default.menu import write_menu
+
+
 
 @dp.message_handler()
 async def bot_echo(message: Message):
     await message.answer(f"You have been unactive for a long time.\n"
-                         f"To return to the menu, enter the command - <b>/menu</b>", reply_markup=ReplyKeyboardRemove())
+                         f"To return to the menu, enter the command - <b>/menu</b>", reply_markup=write_menu)
 
 
 @dp.message_handler(commands=['json'])
