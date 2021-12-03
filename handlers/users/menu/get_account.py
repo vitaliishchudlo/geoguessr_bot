@@ -3,11 +3,13 @@ import datetime
 
 from aiogram.types import Message
 
+from geoguessr_api import change_password_geoAPI
 from loader import dp, bot
 from states import MainMenu
 from utils.db_api import menu_get_account, set_account_status_busy, check_user_limit, insert_user_limit, \
-    delete_user_limit
+    delete_user_limit, change_account_password
 from utils.notify_admins import no_accounts_notify
+from utils.processing_functions.admin import generate_password
 
 
 @dp.message_handler(text='🔺 Get account 🔻', state=MainMenu.GetChoiceMenu)
@@ -16,7 +18,7 @@ async def menu_choice_get_account(message: Message):
     account_data = menu_get_account()
     if account_data:
         # IF ACCOUNT EXISTS IN DATABASE --> CHECK USER LIMIT --> GIVE ACC FOR USER.
-        user_limit = check_user_limit(user_id=message.from_user.id)
+        user_limit = check_user_limit(id_telegram=message.from_user.id)
         if user_limit:
             user_limit = datetime.datetime.strptime(user_limit, '%Y-%m-%d %H:%M:%S')
             time_now = datetime.datetime.now()
@@ -39,6 +41,9 @@ async def menu_choice_get_account(message: Message):
                 message_id=msg_reply.message_id
             )
             await asyncio.sleep(300)
+            new_password = await generate_password()
+            change_password_geoAPI(account_data[0], account_data[1], new_password)
+            change_account_password(account_data[0], account_data[1], new_password)
             return await bot.edit_message_text(
                 text=f'Account expired :-(',
                 chat_id=msg_reply.chat.id,
@@ -56,6 +61,9 @@ async def menu_choice_get_account(message: Message):
             message_id=msg_reply.message_id
         )
         await asyncio.sleep(300)
+        new_password = await generate_password()
+        change_password_geoAPI(account_data[0], account_data[1], new_password)
+        change_account_password(account_data[0], account_data[1], new_password)
         return await bot.edit_message_text(
             text=f'Account expired :-(',
             chat_id=msg_reply.chat.id,

@@ -59,7 +59,7 @@ async def accept_create_accounts(message: Message, state: FSMContext):
         await asyncio.sleep(5)  # wait for the letter to arrive in your inbox
         email_text = get_confirmation_email(hash_from_db, email_key)  # get letter text from email
         token = await get_link_token(email_text)  # take token, which complements link
-        password = await generate_password()  # generate random password
+        password = generate_password()  # generate random password
         confirm_password(token, password)  # confirm account and set password
         delete_all_active_emails_by_ip()  # clear all email addresses by ip address
         input_account(email_address, password, hash_from_db)  # Insert account to DB

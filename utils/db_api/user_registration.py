@@ -35,8 +35,8 @@ def register_user(user_info, email):
     conn = connection()  # create connection to db
     cursor = conn.cursor()  # create cursor
 
-    sql = 'INSERT INTO users_data(id_telegram, email) VALUES (%s, %s)'
-    val = (user_info['id'], email)
+    sql = 'INSERT INTO users_data(id_telegram, username, first_name, second_name, email) VALUES (%s, %s, %s, %s, %s)'
+    val = (user_info['id'], user_info['username'], user_info['first_name'], user_info['last_name'], email)
     request = cursor.execute(sql, val)
     conn.commit()
 

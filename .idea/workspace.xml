@@ -4,7 +4,19 @@
     <list default="true" id="fce3f6c1-f846-47df-b907-f993df428792" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geoguessr_api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/geoguessr_api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admins/create_accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admins/create_accounts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/users/echo.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/echo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/menu/get_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/menu/get_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/users/register_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/users/register_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboards/default/tips.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboards/default/tips.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db_api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db_api/menu__get_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/menu__get_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db_api/user_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_api/user_registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/notify_admins.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/notify_admins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/processing_functions/admin/generate_password.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/processing_functions/admin/generate_password.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +46,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1v4X3hI76u2y0oubwSUMGJFOEqf" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -48,12 +63,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
       <recent name="D:\Coding\Projects\Python\geoguessr_bot\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -165,6 +181,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

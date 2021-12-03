@@ -1,5 +1,3 @@
-import asyncio
-
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
@@ -21,9 +19,10 @@ async def start_registration_user(message: Message):
 async def get_email_address(message: Message, state: FSMContext):
     await state.update_data(email=message.text)
     await message.answer(
-        f'1. Follow the link below\n   >>> https://post-shift.ru/api.php?action=reg&email={message.text}\n\n'
-        f'2. You will receive a hash in the form: {{"hash":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}}.\n\n'
-        f'3. I only need you to send "XXX...."')
+        f'1. You will receive a hash in the form: <u>{{"hash":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}}</u>.\n\n'
+        f'2. Send me hash like <b><u>{{"hash":"XX...XX"}}</u></b> OR <b><u>XX...XX</u></b>\n\n'
+        f'3. Follow the next link \n >>> https://post-shift.ru/api.php?action=reg&email={message.text.lower()}\n\n'
+    )
     # ADD MORE EMAIL CHECKS FOR TRUTH
     await Registration.next()
 

@@ -1,10 +1,14 @@
+from utils.notify_users import on_startup_users_cleaning
+from utils.notify_admins import on_startup_admin_notify
+
 async def on_startup(dp):
     import middlewares
     middlewares.setup(dp)
 
-    from utils.notify_admins import on_startup_notify
+    await on_startup_admin_notify(dp) # NOTIFY ONLY ADMINS
+    #await on_startup_users_cleaning(dp) # CLEAR KEYBOARDS FOR ALL USERS
 
-    await on_startup_notify(dp)
+
 
 
 if __name__ == '__main__':

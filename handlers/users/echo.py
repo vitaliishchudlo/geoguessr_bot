@@ -1,9 +1,9 @@
-from aiogram.types import Message, ContentType, ReplyKeyboardRemove
+import time
 
-from loader import dp
-
+from aiogram.types import Message, ContentType
+from asyncio import sleep as get_pause
 from keyboards.default.menu import write_menu
-
+from loader import dp
 
 
 @dp.message_handler()

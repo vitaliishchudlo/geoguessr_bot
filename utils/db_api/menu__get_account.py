@@ -76,10 +76,10 @@ def input_account(email, password, father_hash, status=0):
     close_connection(cursor, conn)
 
 
-def check_user_limit(user_id):
+def check_user_limit(id_telegram):
     conn = connection()
     cursor = conn.cursor()
-    request = cursor.execute("SELECT finish_limit FROM user_limit WHERE user_id=%s", user_id)
+    request = cursor.execute("SELECT finish_limit FROM user_limit WHERE id_telegram=%s", id_telegram)
     if request != 0:
         result = cursor.fetchone()[0]
         close_connection(cursor, conn)
@@ -89,19 +89,28 @@ def check_user_limit(user_id):
         return False
 
 
-def insert_user_limit(user_id, username, first_name, second_name, finish_limit):
+def insert_user_limit(id_telegram, username, first_name, second_name, finish_limit):
     conn = connection()
     cursor = conn.cursor()
     request = cursor.execute(
-        "INSERT INTO user_limit(user_id, username, first_name, second_name, finish_limit) VALUES(%s, %s, %s, %s, %s)",
-        (user_id, username, first_name, second_name, finish_limit))
+        "INSERT INTO user_limit(id_telegram, username, first_name, second_name, finish_limit) VALUES(%s, %s, %s, %s, %s)",
+        (id_telegram, username, first_name, second_name, finish_limit))
     conn.commit()
     close_connection(cursor, conn)
 
 
-def delete_user_limit(user_id):
+def delete_user_limit(id_telegram):
     conn = connection()
     cursor = conn.cursor()
-    request = cursor.execute("DELETE FROM user_limit WHERE user_id=%s", user_id)
+    request = cursor.execute("DELETE FROM user_limit WHERE id_telegram=%s", id_telegram)
+    conn.commit()
+    close_connection(cursor, conn)
+
+
+def change_account_password(email, old_password, new_password):
+    conn = connection()
+    cursor = conn.cursor()
+    request = cursor.execute("UPDATE accounts_data SET password=%s WHERE email=%s AND password=%s",
+                             (new_password, email, old_password))
     conn.commit()
     close_connection(cursor, conn)
