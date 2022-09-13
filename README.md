@@ -1,2 +1,8 @@
-# geoguessr_bot
-This telegram bot provides free accounts for playing Geoguesser game
+# geoguessr telegram bot
+
+This telegram bot provides free accounts for playing Geoguesser game.
+
+
+
+
+# SOON
