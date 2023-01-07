@@ -1,8 +1,3 @@
-# geoguessr telegram bot
+# Not relevant
 
-This telegram bot provides free accounts for playing Geoguesser game.
-
-
-
-
-# SOON
+The site GeoGuessr has changed its usage policy, so my bot is no longer useful :( 
